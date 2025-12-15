@@ -75,7 +75,7 @@ See [![CHANGELOG](https://img.shields.io/badge/CHANGELOG-View-blue)](https://git
 ## License
 
 MIT License © 2025 Khin Maung Win
-See LICENSE for details.
+See [View the Changelog](https://github.com/kokhinmaungwin/BroCodeBox/blob/main/CHANGELOG.md) for details.
 
 
 ---
