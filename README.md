@@ -75,7 +75,8 @@ See [![CHANGELOG](https://img.shields.io/badge/CHANGELOG-View-blue)](https://git
 ## License
 
 MIT License © 2025 Khin Maung Win
-See [View the Changelog](https://github.com/kokhinmaungwin/BroCodeBox/blob/main/CHANGELOG.md) for details.
+
+See [![LICENSE](https://img.shields.io/badge/LICENSE-View-red)](https://github.com/kokhinmaungwin/BroCodeBox/blob/main/LICENSE)) for details.
 
 
 ---
@@ -90,7 +91,9 @@ Feel free to fork, submit issues or pull requests on GitHub.
 ## Contact
 
 Author: Khin Maung Win
+
 GitHub: kokhinmaungwin
+
 Project: BroCodeBox
 
 
