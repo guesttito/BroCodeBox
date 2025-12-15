@@ -13,18 +13,58 @@ const css = `
 }
 .bro-header{
   display:flex;
-  justify-content:space-between;
   align-items:center;
+  justify-content:space-between;
   padding:8px 12px;
   background:#2d2d2d;
+  flex-wrap: nowrap;   
+  gap: 8px;
 }
-.bro-left{display:flex;align-items:center;gap:6px}
-.dot{width:12px;height:12px;border-radius:50%}
-.red{background:#ff5f56}
-.yellow{background:#ffbd2e}
-.green{background:#27c93f}
-.bro-file{margin-left:8px;color:#ccc;font-size:13px}
-.bro-copy{
+.bro-left{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  flex: 1;            
+  min-width: 0;       
+}
+.dot{
+width:12px;
+height:12px;
+border-radius:50%;
+flex-shrink: 0; 
+}
+.red{
+  background:#ff5f56
+}
+.yellow{
+  background:#ffbd2e
+}
+.green{
+  background:#27c93f
+}
+.bro-file{
+  margin-left:8px;
+  color:#ccc;
+  font-size:13px;
+  max-width: 240px;   
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.bro-lang{
+  margin-left:6px;
+  font-size:11px;
+  padding:2px 6px;
+  border-radius:4px;
+  background:#444;
+  color:#fff;
+}
+.bro-actions{
+  display:flex;
+  flex-shrink: 0;    
+  gap:6px;
+}
+.bro-actions button{
   background:none;
   border:1px solid #444;
   color:#ccc;
@@ -33,46 +73,61 @@ const css = `
   cursor:pointer;
   font-size:12px;
 }
-.bro-body{display:flex}
-.bro-lines{
-  padding:12px 8px;
-  color:#555;
-  user-select:none;
-  text-align:right;
-}
-.bro-pre{
-  margin:0;
-  padding:12px 16px;
-  overflow:auto;
-  font-size:14px;
-  color:#d4d4d4;
+.bro-body {
+  display: flex;
+  align-items: stretch; 
+  max-height: 400px;    
+  border-radius: 0 0 8px 8px;
+  overflow: hidden;
+  background: #1e1e1e;
 }
 
-/* highlight colors */
+.bro-lines {
+  padding: 12px 8px;
+  color: #555;
+  user-select: none;
+  text-align: right;
+  background: #2d2d2d;
+  font-family: Consolas, Monaco, monospace;
+  font-size: 14px;
+  line-height: 1.5em;     
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.bro-pre {
+  margin: 0;
+  padding: 12px 16px;
+  overflow: auto;
+  font-size: 14px;
+  color: #d4d4d4;
+  font-family: Consolas, Monaco, monospace;
+  line-height: 1.5em;       
+  flex: 1;
+  max-height: 400px;
+}
+
+.hl-line{background:rgba(255,255,255,.06)}
 .kw{color:#569cd6}
 .str{color:#ce9178}
 .num{color:#b5cea8}
 .cm{color:#6a9955}
 .func{color:#dcdcaa}
 `;
-const style = document.createElement("style");
-style.textContent = css;
+const style=document.createElement("style");
+style.textContent=css;
 document.head.appendChild(style);
 
 /* =====================
-   broHighlight (simple & safe)
+   broHighlight
 ===================== */
 function broHighlight(code){
-  code = code.replace(/&/g,"&amp;")
-             .replace(/</g,"&lt;")
-             .replace(/>/g,"&gt;");
-
-  code = code.replace(/("(?:\\.|[^"])*")/g,"<span class='str'>$1</span>");
-  code = code.replace(/\b(const|let|var|function|return|if|else|for|while)\b/g,"<span class='kw'>$1</span>");
-  code = code.replace(/\b(\d+)\b/g,"<span class='num'>$1</span>");
-  code = code.replace(/(\/\/.*)/g,"<span class='cm'>$1</span>");
-  code = code.replace(/\b([a-zA-Z_]\w*)(?=\()/g,"<span class='func'>$1</span>");
-
+  code=code.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+  code=code.replace(/("(?:\\.|[^"])*")/g,"<span class='str'>$1</span>");
+  code=code.replace(/\b(const|let|var|function|return|if|else|for|while)\b/g,"<span class='kw'>$1</span>");
+  code=code.replace(/\b(\d+)\b/g,"<span class='num'>$1</span>");
+  code=code.replace(/(\/\/.*)/g,"<span class='cm'>$1</span>");
+  code=code.replace(/\b([a-zA-Z_]\w*)(?=\()/g,"<span class='func'>$1</span>");
   return code;
 }
 
@@ -80,36 +135,55 @@ function broHighlight(code){
    Init
 ===================== */
 document.querySelectorAll(".bro-box").forEach(box=>{
-  const codeEl = box.querySelector("code");
-  const raw = codeEl.innerText.replace(/^\n/, "");
-  const file = box.dataset.file || "code.js";
+  const raw=box.querySelector("code").innerText.replace(/^\n/,"");
+  const file=box.dataset.file||"code.js";
+  const lang=(box.dataset.lang||"auto").toUpperCase();
+  const hl=box.dataset.lines;
 
-  box.innerHTML = `
-    <div class="bro-header">
-      <div class="bro-left">
-        <span class="dot red"></span>
-        <span class="dot yellow"></span>
-        <span class="dot green"></span>
-        <span class="bro-file">${file}</span>
-      </div>
+  let lines=raw.split("\n");
+  let htmlLines=lines.map((l,i)=>{
+    let n=i+1;
+    let h=broHighlight(l);
+    if(hl){
+      let[s,e]=hl.split("-").map(Number);
+      if(n>=s && n<=e) return `<div class="hl-line">${h}</div>`;
+    }
+    return `<div>${h}</div>`;
+  }).join("");
+
+  box.innerHTML=`
+  <div class="bro-header">
+    <div class="bro-left">
+      <span class="dot red"></span>
+      <span class="dot yellow"></span>
+      <span class="dot green"></span>
+      <span class="bro-file">${file}</span>
+      <span class="bro-lang">${lang}</span>
+    </div>
+    <div class="bro-actions">
       <button class="bro-copy">Copy</button>
+      <button class="bro-download">Download</button>
     </div>
-    <div class="bro-body">
-      <div class="bro-lines"></div>
-      <pre class="bro-pre">${broHighlight(raw)}</pre>
-    </div>
-  `;
-
-  // line numbers
-  const lines = raw.split("\n").length;
-  box.querySelector(".bro-lines").innerHTML =
-    Array.from({length:lines},(_,i)=>i+1).join("<br>");
+  </div>
+  <div class="bro-body">
+    <div class="bro-lines">${lines.map((_,i)=>i+1).join("<br>")}</div>
+    <pre class="bro-pre">${htmlLines}</pre>
+  </div>`;
 
   // copy
-  box.querySelector(".bro-copy").onclick = function(){
+  box.querySelector(".bro-copy").onclick=function(){
     navigator.clipboard.writeText(raw);
-    this.innerText = "Copied!";
+    this.innerText="Copied!";
     setTimeout(()=>this.innerText="Copy",1000);
+  };
+
+  // download
+  box.querySelector(".bro-download").onclick=()=>{
+    const blob=new Blob([raw],{type:"text/plain"});
+    const a=document.createElement("a");
+    a.href=URL.createObjectURL(blob);
+    a.download=file;
+    a.click();
   };
 });
 
