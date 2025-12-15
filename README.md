@@ -67,7 +67,7 @@ data-lines - Optional line range to highlight (e.g., 3-5)
 
 ## Changelog
 
-See CHANGELOG.md for details.
+See [![CHANGELOG](https://img.shields.io/badge/CHANGELOG-View-blue)](https://github.com/kokhinmaungwin/BroCodeBox/blob/main/CHANGELOG.md) for details.
 
 
 ---
