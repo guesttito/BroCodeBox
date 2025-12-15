@@ -1,20 +1,100 @@
 # BroCodeBox
 
-Simple, lightweight JavaScript code box with syntax highlighting, line numbers, copy & download buttons, and VSCode-style dark theme.
+A lightweight, self-contained JavaScript code box with syntax highlighting, line numbers, and handy action buttons — Copy, Download, and more.  
+Styled with a VS Code-like dark theme for clean and modern appearance.
+
+---
 
 ## Features
 
-- Basic syntax highlighting (keywords, strings, numbers, comments, functions)
-- Line numbering and optional line highlighting (`data-lines="start-end"`)
-- File name and language display (`data-file`, `data-lang`)
+- Syntax highlighting for JavaScript (simple & safe)
+- Line numbers with optional highlight range support (`data-lines="start-end"`)
 - Copy to clipboard button
-- Download code as file button
-- No dependencies, single JS file
-- Easy to embed and customize
+- Download code button (filename from `data-file`)
+- File name and language display
+- VS Code style dark theme
+- Fully self-contained in a single JS file + injected CSS
+- Easy to embed with a single script tag
+
+---
 
 ## Usage
 
-Include the script in your HTML:
+Include the script from CDN (use specific version for stability):
 
 ```html
+<script src="https://cdn.jsdelivr.net/gh/kokhinmaungwin/BroCodeBox@1.1.0/brocodebox.js"></script>
+
+Or use the latest (unstable) version:
+
 <script src="https://kokhinmaungwin.github.io/BroCodeBox/brocodebox.js"></script>
+
+Add HTML markup like this:
+
+<div class="bro-box" 
+     data-file="example.js" 
+     data-lang="js" 
+     data-lines="2-4">
+  <code>
+const x = 10;
+function hello() {
+  console.log("Hello BroCodeBox!");
+}
+  </code>
+</div>
+
+data-file - File name to show and use for download (default: code.js)
+
+data-lang - Language label (shown but no real syntax switch yet)
+
+data-lines - Optional line range to highlight (e.g., 3-5)
+
+
+
+---
+
+## Versions
+
+|Version|Date	     |Notes |
+|-------|----------|------|
+|1.0.0	|2025-12-14|Initial release with basic features|
+|1.0.1	|2025-12-15|Added Download button|
+|1.1.0	|2025-12-15|Improved layout, added language label, better highlighting and UI fixes|
+
+
+
+---
+
+## Changelog
+
+See CHANGELOG.md for details.
+
+
+---
+
+## License
+
+MIT License © 2025 Khin Maung Win
+See LICENSE for details.
+
+
+---
+
+## Contribution
+
+Feel free to fork, submit issues or pull requests on GitHub.
+
+
+---
+
+## Contact
+
+Author: Khin Maung Win
+GitHub: kokhinmaungwin
+Project: BroCodeBox
+
+
+---
+
+Thank you for using BroCodeBox!
+Happy coding 🚀
