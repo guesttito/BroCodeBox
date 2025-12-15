@@ -90,7 +90,7 @@ Feel free to fork, submit issues or pull requests on GitHub.
 
 ## Contact
 
-## Author **Khin Maung Win**
+- [![Author](https://img.shields.io/badge/Author-Khin Maung Win-blue)](https://github.com/kokhinmaungwin/Author)
 
 - GitHub: [kokhinmaungwin](https://github.com/kokhinmaungwin)
   
