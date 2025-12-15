@@ -35,12 +35,12 @@ Add HTML markup like this:
      data-file="example.js" 
      data-lang="js" 
      data-lines="2-4">
-  <code>
+  <pre><code>
 const x = 10;
 function hello() {
   console.log("Hello BroCodeBox!");
 }
-  </code>
+  </code></pre>
 </div>
 ```
 data-file - File name to show and use for download (default: code.js)
