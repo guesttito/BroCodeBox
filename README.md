@@ -93,7 +93,7 @@ Feel free to fork, submit issues or pull requests on GitHub.
 
 - [![GitHub](https://img.shields.io/badge/GitHub-kokhinmaungwin-yellow)](https://github.com/kokhinmaungwin)
   
-- [![Project](https://img.shields.io/badge/Project-BroCodeBox-red](https://github.com/kokhinmaungwin/BroCodeBox)
+- [![Project](https://img.shields.io/badge/Project-BroCodeBox-red)](https://github.com/kokhinmaungwin/BroCodeBox)
 
 
 ---
