@@ -1,3 +1,9 @@
+/*!
+ * BroCodeBox v1.1.0
+ * Author: Khin Maung Win
+ * License: MIT
+ * https://github.com/kokhinmaungwin/BroCodeBox
+ */
 (function(){
 
 /* =====================
